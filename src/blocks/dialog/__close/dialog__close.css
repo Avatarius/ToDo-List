@@ -1,0 +1,10 @@
+.dialog__close {
+  position: absolute;
+  background: center / cover no-repeat url('/src/images/close.svg');
+  border: none;
+  inset-inline-start: calc(100%);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: calc(100% - 35px);
+  inset-block-start: 15px;
+}

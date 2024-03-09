@@ -1,0 +1,12 @@
+@import url('./__button/_new/content__button_new.css');
+
+.content {
+  background-color: #595656;
+  inline-size: 500px;
+  min-block-size: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}

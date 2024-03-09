@@ -1,0 +1,6 @@
+.todo__list {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  gap: 20px;
+}

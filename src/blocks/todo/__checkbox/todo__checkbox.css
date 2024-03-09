@@ -1,0 +1,4 @@
+.todo__checkbox {
+  grid-area: todo__checkbox;
+  align-self: center;
+}

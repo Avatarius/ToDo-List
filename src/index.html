@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+  </head>
+  <body class="page">
+    <h1 class="page__title">ToDo List</h1>
+    <main class="content">
+      <form class="search__form">
+        <input
+          type="text"
+          placeholder="search"
+          class="search__input"
+          name="search"
+        />
+      </form>
+      <ul class="todo__list"></ul>
+      <button type="button" class="button content__button_new">+</button>
+    </main>
+    <template id="todo__template">
+      <li class="todo__list-item">
+        <input type="checkbox" class="todo__checkbox" />
+        <p class="todo__text"></p>
+        <p class="todo__priority">
+          Приоритет: <span class="todo__priority-span">1</span>
+        </p>
+        <button type="button" class="button todo__button todo__button_edit">
+          <svg fill="none" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="m3.99 16.854-1.314 3.504a.75.75 0 0 0 .966.965l3.503-1.314a3 3 0 0 0 1.068-.687L18.36 9.175s-.354-1.061-1.414-2.122c-1.06-1.06-2.122-1.414-2.122-1.414L4.677 15.786a3 3 0 0 0-.687 1.068zm12.249-12.63 1.383-1.383c.248-.248.579-.406.925-.348.487.08 1.232.322 1.934 1.025.703.703.945 1.447 1.025 1.934.058.346-.1.677-.348.925L19.774 7.76s-.353-1.06-1.414-2.12c-1.06-1.062-2.121-1.415-2.121-1.415z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button type="button" class="button todo__button todo__button_remove">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M5.755 20.283 4 8h16l-1.755 12.283A2 2 0 0 1 16.265 22h-8.53a2 2 0 0 1-1.98-1.717ZM21 4h-5V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v1H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"
+            />
+          </svg>
+        </button>
+      </li>
+    </template>
+    <dialog class="dialog dialog_new">
+      <div class="dialog__container">
+        <h2>Создать новую задачу</h2>
+        <form class="dialog__form">
+          <label class="dialog__label">
+            <span class="dialog__title">Описание</span>
+            <input
+              type="text"
+              placeholder="Описание"
+              required
+              class="dialog__input"
+              name="description"
+            />
+          </label>
+          <label class="dialog__label">
+            <span class="dialog__title">Приоритет</span>
+            <input
+              type="number"
+              placeholder="Приоритет"
+              required
+              class="dialog__input"
+              name="priority"
+            />
+          </label>
+          <button type="submit" class="button dialog__button">Добавить</button>
+        </form>
+        <button type="button" class="button dialog__close"></button>
+      </div>
+    </dialog>
+    <dialog class="dialog dialog_edit">
+      <div class="dialog__container">
+        <h2>Редактировать задачу</h2>
+        <form class="dialog__form">
+          <label class="dialog__label">
+            <span class="dialog__title">Описание</span>
+            <input
+              type="text"
+              placeholder="Описание"
+              required
+              class="dialog__input"
+              name="description"
+            />
+          </label>
+          <label class="dialog__label">
+            <span class="dialog__title">Приоритет</span>
+            <input
+              type="number"
+              placeholder="Приоритет"
+              required
+              class="dialog__input"
+              name="priority"
+            />
+          </label>
+          <button type="submit" class="button dialog__button">
+            Редактировать
+          </button>
+        </form>
+        <button type="button" class="button dialog__close"></button>
+      </div>
+    </dialog>
+    <dialog class="dialog dialog_remove">
+      <div class="dialog__container">
+        <h2>Вы уверены?</h2>
+        <form class="dialog__form">
+          <button type="submit" class="button dialog__button">Да</button>
+        </form>
+        <button type="button" class="button dialog__close"></button>
+      </div>
+    </dialog>
+  </body>
+</html>

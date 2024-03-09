@@ -1,0 +1,6 @@
+.dialog__button {
+  inline-size: 100%;
+  block-size: 30px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}

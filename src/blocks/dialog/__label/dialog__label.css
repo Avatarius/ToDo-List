@@ -1,0 +1,6 @@
+.dialog__label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-block: 20px;
+}

@@ -1,0 +1,11 @@
+.content__button_new {
+  border-radius: 100%;
+  inline-size: 60px;
+  block-size: 60px;
+  font-size: 42px;
+  color: #fff;
+  position: absolute;
+  inset-inline-start: calc(50% - 30px);
+  inset-block-start: calc(100%- 75px);
+  border: 1px solid var(--todo-button-color, #fff);
+}

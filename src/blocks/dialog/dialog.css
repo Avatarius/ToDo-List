@@ -1,0 +1,20 @@
+@import url('./__container/dialog__container.css');
+@import url('./__form/dialog__form.css');
+@import url('./__label/dialog__label.css');
+@import url('./__button/dialog__button.css');
+@import url('./__close/dialog__close.css');
+@import url('./__input/dialog__input.css');
+
+.dialog {
+  min-inline-size: 400px;
+  position: relative;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+
+}
+
+.dialog[open] {
+  /* display: flex; */
+  /* flex-direction: column; */
+}

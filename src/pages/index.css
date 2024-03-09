@@ -1,0 +1,16 @@
+@import url('../vendor/variables.css');
+@import url('../vendor/fonts.css');
+@import url('../vendor/globals.css');
+@import url('../blocks/page/page.css');
+@import url('../blocks/content/content.css');
+@import url('../blocks/todo/todo.css');
+@import url('../blocks/dialog/dialog.css');
+
+
+.button {
+  aspect-ratio: 1 / 1;
+  appearance: none;
+  /* border: 1px solid #fff; */
+  cursor: pointer;
+  background-color: transparent;
+}
