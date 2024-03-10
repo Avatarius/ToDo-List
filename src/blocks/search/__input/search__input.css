@@ -1,0 +1,8 @@
+.search__input {
+  inline-size: 100%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  font-size: 25px;
+  padding: 8px;
+}

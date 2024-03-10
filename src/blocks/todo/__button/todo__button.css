@@ -2,6 +2,6 @@
   border: 1px solid var(--todo-button-color);
   border-radius: 100%;
   color: var(--todo-button-color, #fff);
-
+  background-color: transparent;
 }
 
