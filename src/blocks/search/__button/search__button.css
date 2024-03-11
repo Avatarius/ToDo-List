@@ -1,0 +1,13 @@
+.search__button {
+  inline-size: var(--search-button-size, 35px);
+  block-size: var(--search-button-size, 35px);
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-and-icons-color, #fff);
+}
+
+.search__button svg {
+  pointer-events: none;
+}

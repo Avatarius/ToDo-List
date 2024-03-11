@@ -1,7 +1,7 @@
 .todo__button {
-  border: 1px solid var(--todo-button-color);
+  border: 1px solid var(--text-and-icons-color, #fff);
   border-radius: 100%;
-  color: var(--todo-button-color, #fff);
+  color: var(--text-and-icons-color, #fff);
   background-color: transparent;
 }
 

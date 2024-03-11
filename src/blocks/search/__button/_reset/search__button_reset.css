@@ -1,0 +1,8 @@
+.search__button_reset {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.search__button_reset_expanded {
+  opacity: 1;
+}

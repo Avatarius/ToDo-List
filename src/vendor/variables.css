@@ -1,5 +1,6 @@
 :root {
-  --todo-button-color: #fff;
   --background-color: #8e2de2;
+  --text-and-icons-color: #fff;
   --new-button-size: 80px;
+  --search-button-size: 35px;
 }

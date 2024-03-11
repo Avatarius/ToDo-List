@@ -5,6 +5,9 @@ import { openDialog, closeDialog } from "./dialog";
 
 const todoList = document.querySelector(".todo__list");
 const searchForm = document.querySelector(".search__form");
+const searchInput = document.querySelector(".search__input");
+const searchButton = document.querySelector(".search__button_search");
+const searchResetButton = document.querySelector(".search__button_reset");
 const buttonNewTodo = document.querySelector(".content__button_new");
 
 const dialogNew = document.querySelector(".dialog_new");
@@ -114,5 +117,32 @@ dialogEditObj.form.addEventListener("submit", (evt) => {
 
 searchForm.addEventListener("submit", (evt) => evt.preventDefault());
 searchForm.search.addEventListener("input", (evt) => {
+  filterTodoList(searchForm.search.value);
+});
+// функционал поиска
+document.addEventListener("click", (evt) => {
+  const clickOnSearchButton = evt.target.classList.contains(
+    "search__button_search"
+  );
+
+  const clickOnInput = evt.target.classList.contains("search__input");
+  const clickOnResetButton = evt.target.classList.contains('search__button_reset');
+  if (clickOnSearchButton) {
+    searchForm.classList.add("search__form_expanded");
+    searchResetButton.classList.add("search__button_reset_expanded");
+    searchInput.classList.add('search__input_expanded');
+  } else if (
+    !clickOnSearchButton &&
+    !clickOnInput &&
+    !clickOnResetButton &&
+    searchInput.value === ""
+  ) {
+    searchForm.classList.remove("search__form_expanded");
+    searchResetButton.classList.remove("search__button_reset_expanded");
+    searchInput.classList.remove('search__input_expanded');
+  }
+});
+searchResetButton.addEventListener("click", () => {
+  searchForm.reset();
   filterTodoList(searchForm.search.value);
 });
