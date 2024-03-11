@@ -1,7 +1,10 @@
 .todo__button {
-  border: 1px solid var(--text-and-icons-color, #fff);
+  /* border: 1px solid var(--text-and-icons-color, #fff); */
+  border: none;
   border-radius: 100%;
   color: var(--text-and-icons-color, #fff);
   background-color: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  appearance: none;
 }
-
