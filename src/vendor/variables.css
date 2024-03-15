@@ -1,6 +1,10 @@
 :root {
-  --background-color: #8e2de2;
+  --background-color: linear-gradient(to right, #8e2de2, #4a00e0);
+  --content-border-radius: 20px;
   --text-and-icons-color: #fff;
+  --text-annd-icons-hover-color: #67C6E3;
   --new-button-size: 80px;
   --search-button-size: 35px;
+  --checkbox-size: 25px;
+  --checkbox-inner-size: calc(var(--checkbox-size, 25px) * 0.75);
 }

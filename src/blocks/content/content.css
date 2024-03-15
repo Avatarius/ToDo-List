@@ -5,10 +5,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px;
+  border-radius: var(--content-border-radius, 20px);
   padding: 50px 20px 20px 20px;
   background-color: #171717;
   inline-size: 40%;
   min-block-size: 750px;
   gap: 20px;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  block-size: 10%;
+  background: var(--background-color, #8e2de2);
+  background-attachment: fixed;
+  border-top-left-radius: var(--content-border-radius, 20px);
+  border-top-right-radius: var(--content-border-radius, 20px);
+  mask-image: url('/src/images/buttonMask.svg');
+  mask-repeat: no-repeat;
+  mask-position: top;
+  mask-size: 13%;
+  transition: mask-size 0.15s ease-in-out;
+}
+
+.content:has(.content__button_new:hover)::before {
+  mask-size: 16%;
 }

@@ -1,0 +1,23 @@
+.todo__checkbox_custom {
+  display: inline-block;
+  inline-size: var(--checkbox-size, 25px);
+  block-size: var(--checkbox-size, 25px);
+  background-color: #fff;
+  border-radius: 100%;
+  grid-area: todo__checkbox;
+  align-self: center;
+  margin-inline-end: 5px;
+  position: relative;
+}
+
+.todo__checkbox:checked + .todo__checkbox_custom::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: calc(50% - var(--checkbox-inner-size, 18.75px) / 2);
+  inset-block-start: calc(50% - var(--checkbox-inner-size, 18.75px) / 2);
+  inline-size: var(--checkbox-inner-size, 18.75px);
+  block-size:  var(--checkbox-inner-size, 18.75px);
+  background-color: #000;
+  border-radius: 100%;
+}
+

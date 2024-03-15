@@ -3,10 +3,19 @@
   grid-template-columns: min-content 1fr min-content min-content;
   grid-template-rows: 1fr;
   grid-template-areas:
-  'todo__checkbox todo__text todo__button_edit todo__button_remove'
-  'todo__checkbox todo__priority todo__button_edit todo__button_remove';
-  padding: 20px;
-  border: 1px solid rgba(255 255 255 / 0.5);
-  border-radius: 15px;
+    "todo__label todo__text todo__button_edit todo__button_remove"
+    "todo__label todo__priority todo__button_edit todo__button_remove";
   column-gap: 5px;
+  border: 1px solid rgba(255 255 255 / 0.5);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo__list-item::before {
+  content: "";
+  position: absolute;
+  inset: -25px;
+  z-index: -1;
+  background-color: #fff;
 }

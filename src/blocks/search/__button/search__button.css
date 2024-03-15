@@ -11,3 +11,7 @@
 .search__button svg {
   pointer-events: none;
 }
+
+.search__button:hover {
+  color: var(--text-annd-icons-hover-color, #67c6e3);
+}
