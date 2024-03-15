@@ -1,4 +1,5 @@
 .todo__list-item {
+  position: relative;
   display: grid;
   grid-template-columns: min-content 1fr min-content min-content;
   grid-template-rows: 1fr;
@@ -6,16 +7,29 @@
     "todo__label todo__text todo__button_edit todo__button_remove"
     "todo__label todo__priority todo__button_edit todo__button_remove";
   column-gap: 5px;
-  border: 1px solid rgba(255 255 255 / 0.5);
+  /* border: 1px solid rgba(255 255 255 / 0.5); */
+  border: none;
   padding: 20px;
-  position: relative;
   overflow: hidden;
 }
 
-.todo__list-item::before {
-  content: "";
+
+.todo__list-item::before, .todo__list-item::after {
+  content: '';
   position: absolute;
-  inset: -25px;
-  z-index: -1;
-  background-color: #fff;
+  background-color: var(--text-and-icons-color, #fff);
+  transition: inline-size 0.25s linear, background-color 0.25s linear;
+  inset: 0;
+  inline-size: var(--todo-border-size, 10%);
+  block-size: 1.5px;
+}
+
+.todo__list-item::after {
+  inset-block-start: calc(100% - 1.5px);
+}
+
+.todo__list-item:hover::before,
+.todo__list-item:hover::after {
+  inline-size: 100%;
+  background-color: var(--text-annd-icons-hover-color, #67C6E3);
 }
