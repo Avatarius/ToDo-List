@@ -8,10 +8,10 @@
   border-radius: var(--content-border-radius, 7px);
   padding: 50px 20px 20px 20px;
   background-color: var(--content-background-color, #7469b6);
-  inline-size: 40%;
+  min-inline-size: 800px;
   min-block-size: 750px;
   gap: 20px;
-  box-shadow: 0 0 10px rgba(0 0 0 / 0.4);
+  box-shadow: 0 10px 10px rgba(0 0 0 / 0.4);
 }
 
 .content::before {
@@ -26,10 +26,10 @@
   mask-image: url('/src/images/buttonMask.svg');
   mask-repeat: no-repeat;
   mask-position: top;
-  mask-size: 13%;
+  mask-size: 14%;
   transition: mask-size 0.15s ease-in-out;
 }
 
 .content:has(.content__button_new:hover)::before {
-  mask-size: 16%;
+  mask-size: 17%;
 }
