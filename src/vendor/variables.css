@@ -1,11 +1,14 @@
 :root {
   --background-color: linear-gradient(to right, #8e2de2, #4a00e0);
-  --content-border-radius: 20px;
+  --content-background-color: #313866;
+  --content-border-radius: 7px;
   --text-and-icons-color: #fff;
-  --text-annd-icons-hover-color: #67C6E3;
+  /* --text-annd-icons-hover-color: #67C6E3; */
+  --text-annd-icons-hover-color: #ee4266;
+  /* --text-annd-icons-hover-color: #FFD23F; */
   --new-button-size: 80px;
   --search-button-size: 35px;
   --checkbox-size: 20px;
   --checkbox-inner-size: calc(var(--checkbox-size, 25px) * 0.75);
-  --todo-border-size: 35%;
+  --partial-border-size: 20px;
 }

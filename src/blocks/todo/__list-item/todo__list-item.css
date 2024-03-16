@@ -1,35 +1,18 @@
 .todo__list-item {
   position: relative;
   display: grid;
-  grid-template-columns: min-content 1fr min-content min-content;
+  grid-template-columns: min-content 1fr 40px 40px;
   grid-template-rows: 1fr;
-  grid-template-areas:
-    "todo__label todo__text todo__button_edit todo__button_remove"
-    "todo__label todo__priority todo__button_edit todo__button_remove";
+  grid-template-areas: "todo__label todo__text todo__button_edit todo__button_remove";
   column-gap: 5px;
-  /* border: 1px solid rgba(255 255 255 / 0.5); */
   border: none;
   padding: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  background-color: rgba(0 0 0 / 0.1);
+  transition: background-color 0.25s linear;
+
 }
 
-
-.todo__list-item::before, .todo__list-item::after {
-  content: '';
-  position: absolute;
-  background-color: var(--text-and-icons-color, #fff);
-  transition: inline-size 0.25s linear, background-color 0.25s linear;
-  inset: 0;
-  inline-size: var(--todo-border-size, 10%);
-  block-size: 1.5px;
-}
-
-.todo__list-item::after {
-  inset-block-start: calc(100% - 1.5px);
-}
-
-.todo__list-item:hover::before,
-.todo__list-item:hover::after {
-  inline-size: 100%;
-  background-color: var(--text-annd-icons-hover-color, #67C6E3);
+.todo__list-item:hover {
+  background-color: rgba(0 0 0 / 0.2);
 }

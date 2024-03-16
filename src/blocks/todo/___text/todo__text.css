@@ -1,3 +1,5 @@
 .todo__text {
   grid-area: todo__text;
+  align-self: center;
+  font-size: 20px;
 }

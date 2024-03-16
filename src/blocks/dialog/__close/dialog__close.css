@@ -7,4 +7,5 @@
   block-size: 25px;
   inset-inline-start: calc(100% - 35px);
   inset-block-start: 15px;
+  cursor: pointer;
 }

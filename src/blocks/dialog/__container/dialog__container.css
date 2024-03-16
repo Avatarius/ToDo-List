@@ -1,5 +1,7 @@
 .dialog__container {
-  border-radius: 20px;
-  background-color: #fff;
+  border-radius: 10px;
+  /* background-color: var(--content-background-color, #313866); */
+  background-color: var(--text-annd-icons-hover-color, #ee4266);
+  color: #fff;
   padding: 20px;
 }

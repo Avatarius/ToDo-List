@@ -31,10 +31,10 @@ const dialogEditObj = {
 };
 
 const initialTodoList = [
-  { description: "Проснуться", isCompleted: true, priority: 1 },
-  { description: "Позавтракать", isCompleted: true, priority: 2 },
-  { description: "Одеться", isCompleted: false, priority: 3 },
-  { description: "Пойти на работу", isCompleted: false, priority: 4 },
+  { description: "Проснуться", isCompleted: true },
+  { description: "Позавтракать", isCompleted: true },
+  { description: "Одеться", isCompleted: false },
+  { description: "Пойти на работу", isCompleted: false },
 ];
 
 const funcObj = {
@@ -48,13 +48,11 @@ const funcObj = {
   editFunc: function (uiObj) {
     openDialog(dialogEdit);
     dialogEditObj.form.description.value = uiObj.description.textContent;
-    dialogEditObj.form.priority.value = uiObj.priority.textContent;
     handleTodoEdit = function () {
       editTodo(
         {
           description: dialogEditObj.form.description.value,
           isCompleted: uiObj.isCompleted.checked,
-          priority: dialogEditObj.form.priority.value,
         },
         uiObj
       );
@@ -94,7 +92,6 @@ dialogNewObj.form.addEventListener("submit", (evt) => {
       {
         description: dialogNewObj.form.description.value,
         isCompleted: false,
-        priority: dialogNewObj.form.priority.value,
       },
       funcObj
     )

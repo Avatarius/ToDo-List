@@ -5,7 +5,6 @@
 @import url('./__button/todo__button.css');
 @import url('./__button/_edit/todo__button_edit.css');
 @import url('./__button/_remove/todo__button_remove.css');
-@import url('./__priority/todo__priority.css');
 @import url('./__label/todo__label.css');
 @import url('./__checkbox/todo__checkbox.css');
 @import url('.//__checkbox/_custom/todo__checkbox_custom.css');
