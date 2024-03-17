@@ -15,6 +15,9 @@ function addTodo(todoObj, funcObj) {
 
   todoDescription.textContent = description;
   checkboxCompleted.checked = isCompleted;
+  if (checkboxCompleted.checked) {
+    todoDescription.classList.add('todo__text_completed');
+  }
 
   removeButton.addEventListener("click", (evt) => removeFunc(todoElement));
   editButton.addEventListener("click", (evt) =>
@@ -23,6 +26,13 @@ function addTodo(todoObj, funcObj) {
       isCompleted: checkboxCompleted,
     })
   );
+  checkboxCompleted.addEventListener('click', (evt) => {
+    if (checkboxCompleted.checked) {
+      todoDescription.classList.add('todo__text_completed');
+    } else {
+      todoDescription.classList.remove('todo__text_completed');
+    }
+  })
 
   return todoElement;
 }

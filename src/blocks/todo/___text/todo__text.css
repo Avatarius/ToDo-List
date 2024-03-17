@@ -1,5 +1,17 @@
 .todo__text {
-  grid-area: todo__text;
-  align-self: center;
   font-size: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.todo__text::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 45%;
+  inline-size: 0;
+  block-size: 10%;
+  background-color: var(--text-annd-icons-hover-color, #ee4266);
+  transition: inline-size 0.15s linear;
+  rotate: -3deg;
 }

@@ -1,0 +1,4 @@
+.todo__text-container {
+  grid-area: todo__text;
+  align-self: center;
+}
