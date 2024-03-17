@@ -1,14 +1,15 @@
 .content__button_new {
-  appearance: none;
+  position: absolute;
   border: none;
-  background-color: #000;
-  font-size: 60px;
+  border-radius: 100%;
   font-weight: 400;
+  font-size: 60px;
+  background-color: #000;
+  transition: scale 0.15s ease-in-out;
+  cursor: pointer;
+  appearance: none;
   inline-size: var(--new-button-size, 80px);
   block-size: var(--new-button-size, 80px);
-  border-radius: 100%;
-  transition: scale 0.15s ease-in-out;
-  position: absolute;
   inset-inline-start: calc(50% - var(--new-button-size, 100px) / 2);
   inset-block-start: calc(var(--new-button-size, 100px) / -2);
 }

@@ -4,11 +4,12 @@
   grid-area: todo__checkbox;
   align-self: center;
   margin-inline-end: 5px;
-  box-shadow: 0 0 0 2px #fff;
+  border: 2px solid #fff;
   background-color: transparent;
+  transition: border-color 0.15s linear;
   cursor: pointer;
-  inline-size: var(--checkbox-size, 20px);
-  block-size: var(--checkbox-size, 20px);
+  inline-size: var(--checkbox-size, 23px);
+  block-size: var(--checkbox-size, 23px);
 }
 
 .todo__checkbox:checked + .todo__checkbox_custom::before {
@@ -16,9 +17,18 @@
   position: absolute;
   border-inline-end: 3px solid #fff;
   border-block-end: 3px solid #fff;
+  transition: border-color 0.15s linear;
   inline-size: 9px;
   block-size: 15px;
   rotate: 45deg;
   inset-inline-start: 6px;
   inset-block-start: 0;
+}
+
+.todo__checkbox:hover + .todo__checkbox_custom {
+  border-color: var(--text-annd-icons-hover-color, #ee4266);
+}
+
+.todo__checkbox:hover + .todo__checkbox_custom::before {
+  border-color: var(--text-annd-icons-hover-color, #ee4266);
 }

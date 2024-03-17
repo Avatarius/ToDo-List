@@ -3,12 +3,11 @@
   border-radius: 5px;
   border-block-end: 1px solid #fff;
   padding: 10px;
-  color: #fff;
-  background-color: transparent;
   outline: none;
+  color: #fff;
   font-size: 22px;
+  background-color: transparent;
 }
 .dialog__input::placeholder {
   color: #fff;
 }
-

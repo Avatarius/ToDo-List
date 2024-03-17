@@ -1,6 +1,7 @@
 :root {
   --background-color: linear-gradient(to right, #8e2de2, #4a00e0);
   --content-background-color: #313866;
+  --dialog-background-color: #8e2de2;
   --content-border-radius: 7px;
   --text-and-icons-color: #fff;
   /* --text-annd-icons-hover-color: #67C6E3; */
@@ -8,7 +9,7 @@
   /* --text-annd-icons-hover-color: #FFD23F; */
   --new-button-size: 80px;
   --search-button-size: 35px;
-  --checkbox-size: 20px;
+  --checkbox-size: 23px;
   --checkbox-inner-size: calc(var(--checkbox-size, 25px) * 0.75);
   --partial-border-size: 20px;
 }
