@@ -2,11 +2,11 @@
 import "../pages/index.css";
 import { addTodo, removeTodo, editTodo } from "./todo";
 import { openDialog, closeDialog } from "./dialog";
+import { getTodosApi, addTodoApi, editTodoApi, removeTodoApi } from "./api";
 
 const todoList = document.querySelector(".todo__list");
 const searchForm = document.querySelector(".search__form");
 const searchInput = document.querySelector(".search__input");
-const searchButton = document.querySelector(".search__button_search");
 const searchResetButton = document.querySelector(".search__button_reset");
 const buttonNewTodo = document.querySelector(".content__button_new");
 
@@ -30,40 +30,95 @@ const dialogEditObj = {
   submitButton: dialogEdit.querySelector(".dialog__button"),
 };
 
-const initialTodoList = [
-  { description: "Проснуться", isCompleted: true },
-  { description: "Позавтракать", isCompleted: true },
-  { description: "Одеться", isCompleted: false },
-  { description: "Пойти на работу", isCompleted: false },
-];
+async function populateList() {
+  try {
+    const response = await getTodosApi();
+    if (!response) {
+      throw new Error(`Ошибка ${response.status}`);
+    }
+    const json = await response.json();
+    json.forEach((todoObj) => {
+      todoList.append(addTodo(todoObj, funcObj));
+    });
+  } catch (err) {
+    console.log(`Ошибка ${err.status}`);
+  }
+}
+
+async function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+  try {
+    const response = await addTodoApi({
+      title: dialogNewObj.form.description.value,
+      completed: false,
+    });
+    if (!response) {
+      throw new Error(`Ошибка ${response.status}`);
+    }
+    const json = await response.json();
+    todoList.prepend(
+      addTodo(
+        {
+          title: json.title,
+          completed: false,
+        },
+        funcObj
+      )
+    );
+
+    closeDialog(dialogNew);
+  } catch (err) {
+    console.log(`Ошибка ${err.status}`);
+  }
+}
+populateList();
 
 const funcObj = {
-  removeFunc: function (todoElement) {
-    handleTodoRemove = function () {
-      removeTodo(todoElement);
-      closeDialog(dialogRemove);
-    };
+  removeFunc: async function (todoElement, id) {
     openDialog(dialogRemove);
+    handleTodoRemove = async function () {
+      try {
+        const response = await removeTodoApi(id);
+        if (!response) {
+          throw new Error(`Ошибка ${response.status}`);
+        }
+        removeTodo(todoElement);
+        closeDialog(dialogRemove);
+      } catch (error) {
+        console.log(error);
+      }
+    };
   },
-  editFunc: function (uiObj) {
+  editFunc: async function (uiObj, id) {
     openDialog(dialogEdit);
     dialogEditObj.form.description.value = uiObj.description.textContent;
-    handleTodoEdit = function () {
-      editTodo(
-        {
-          description: dialogEditObj.form.description.value,
-          isCompleted: uiObj.isCompleted.checked,
-        },
-        uiObj
-      );
-      closeDialog(dialogEdit);
+    handleTodoEdit = async function () {
+      try {
+        const response = await editTodoApi(
+          {
+            title: dialogEditObj.form.description.value,
+            completed: uiObj.isCompleted.checked,
+          },
+          id
+        );
+        if (!response.ok) {
+          throw new Error("Ошибка ${error.status}");
+        }
+        const json = await response.json();
+        editTodo(
+          {
+            title: json.title,
+            completed: json.completed,
+          },
+          uiObj
+        );
+        closeDialog(dialogEdit);
+      } catch (error) {
+        console.log(`Ошибка ${error.status}`);
+      }
     };
   },
 };
-
-initialTodoList.forEach((todoObj) => {
-  todoList.append(addTodo(todoObj, funcObj));
-});
 
 function filterTodoList(substring) {
   const todoItems = Array.from(todoList.querySelectorAll(".todo__list-item"));
@@ -85,21 +140,22 @@ buttonNewTodo.addEventListener("click", () => {
   openDialog(dialogNew);
 });
 
-dialogNewObj.form.addEventListener("submit", (evt) => {
+/* dialogNewObj.form.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  todoList.append(
+  todoList.prepend(
     addTodo(
       {
-        description: dialogNewObj.form.description.value,
-        isCompleted: false,
+        title: dialogNewObj.form.description.value,
+        completed: false,
       },
       funcObj
     )
   );
   closeDialog(dialogNew);
-});
+}); */
+dialogNewObj.form.addEventListener("submit", handleAddCardSubmit);
 
-let handleTodoRemove = function () {};
+let handleTodoRemove = async function () {};
 let handleTodoEdit = function () {};
 
 dialogRemoveObj.form.addEventListener("submit", (evt) => {
@@ -123,11 +179,13 @@ document.addEventListener("click", (evt) => {
   );
 
   const clickOnInput = evt.target.classList.contains("search__input");
-  const clickOnResetButton = evt.target.classList.contains('search__button_reset');
+  const clickOnResetButton = evt.target.classList.contains(
+    "search__button_reset"
+  );
   if (clickOnSearchButton) {
     searchForm.classList.add("search__form_expanded");
     searchResetButton.classList.add("search__button_reset_expanded");
-    searchInput.classList.add('search__input_expanded');
+    searchInput.classList.add("search__input_expanded");
   } else if (
     !clickOnSearchButton &&
     !clickOnInput &&
@@ -136,7 +194,7 @@ document.addEventListener("click", (evt) => {
   ) {
     searchForm.classList.remove("search__form_expanded");
     searchResetButton.classList.remove("search__button_reset_expanded");
-    searchInput.classList.remove('search__input_expanded');
+    searchInput.classList.remove("search__input_expanded");
   }
 });
 searchResetButton.addEventListener("click", () => {

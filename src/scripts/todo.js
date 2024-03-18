@@ -10,21 +10,21 @@ function addTodo(todoObj, funcObj) {
   const todoDescription = todoElement.querySelector(".todo__text");
   const checkboxCompleted = todoElement.querySelector(".todo__checkbox");
 
-  const { description, isCompleted } = todoObj;
+  const { id, title, completed } = todoObj;
   const { removeFunc, editFunc } = funcObj;
 
-  todoDescription.textContent = description;
-  checkboxCompleted.checked = isCompleted;
+  todoDescription.textContent = title;
+  checkboxCompleted.checked = completed;
   if (checkboxCompleted.checked) {
     todoDescription.classList.add('todo__text_completed');
   }
 
-  removeButton.addEventListener("click", (evt) => removeFunc(todoElement));
+  removeButton.addEventListener("click", (evt) => removeFunc(todoElement, id));
   editButton.addEventListener("click", (evt) =>
     editFunc({
       description: todoDescription,
       isCompleted: checkboxCompleted,
-    })
+    }, id)
   );
   checkboxCompleted.addEventListener('click', (evt) => {
     if (checkboxCompleted.checked) {
@@ -42,8 +42,8 @@ function removeTodo(todoElement) {
 }
 
 function editTodo(todoObj, uiObj) {
-  uiObj.description.textContent = todoObj.description;
-  uiObj.isCompleted.checked = todoObj.isCompleted;
+  uiObj.description.textContent = todoObj.title;
+  uiObj.isCompleted.checked = todoObj.completed;
 }
 
 export { addTodo, removeTodo, editTodo };
