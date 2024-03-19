@@ -1,6 +1,6 @@
 `use strict`;
 import "../pages/index.css";
-import { addTodo, removeTodo, editTodo } from "./todo";
+import { addTodo, removeTodo, editTodo, changeStatusTodo } from "./todo";
 import { openDialog, closeDialog } from "./dialog";
 import { getTodosApi, addTodoApi, editTodoApi, removeTodoApi } from "./api";
 
@@ -32,43 +32,26 @@ const dialogEditObj = {
 
 async function populateList() {
   try {
-    const response = await getTodosApi();
-    if (!response) {
-      throw new Error(`Ошибка ${response.status}`);
-    }
-    const json = await response.json();
-    json.forEach((todoObj) => {
-      todoList.append(addTodo(todoObj, funcObj));
+    const todoArray = await getTodosApi();
+    todoArray.forEach((todo) => {
+      todoList.append(addTodo(todo, funcObj));
     });
   } catch (err) {
-    console.log(`Ошибка ${err.status}`);
+    console.log(err);
   }
 }
 
 async function handleAddCardSubmit(evt) {
   evt.preventDefault();
   try {
-    const response = await addTodoApi({
+    const json = await addTodoApi({
       title: dialogNewObj.form.description.value,
       completed: false,
     });
-    if (!response) {
-      throw new Error(`Ошибка ${response.status}`);
-    }
-    const json = await response.json();
-    todoList.prepend(
-      addTodo(
-        {
-          title: json.title,
-          completed: false,
-        },
-        funcObj
-      )
-    );
-
+    todoList.prepend(addTodo({ title: json.title, completed: false }, funcObj));
     closeDialog(dialogNew);
   } catch (err) {
-    console.log(`Ошибка ${err.status}`);
+    console.log(er);
   }
 }
 populateList();
@@ -78,10 +61,7 @@ const funcObj = {
     openDialog(dialogRemove);
     handleTodoRemove = async function () {
       try {
-        const response = await removeTodoApi(id);
-        if (!response) {
-          throw new Error(`Ошибка ${response.status}`);
-        }
+        const json = await removeTodoApi(id);
         removeTodo(todoElement);
         closeDialog(dialogRemove);
       } catch (error) {
@@ -94,29 +74,27 @@ const funcObj = {
     dialogEditObj.form.description.value = uiObj.description.textContent;
     handleTodoEdit = async function () {
       try {
-        const response = await editTodoApi(
+        const json = await editTodoApi(
           {
             title: dialogEditObj.form.description.value,
             completed: uiObj.isCompleted.checked,
           },
           id
         );
-        if (!response.ok) {
-          throw new Error("Ошибка ${error.status}");
-        }
-        const json = await response.json();
-        editTodo(
-          {
-            title: json.title,
-            completed: json.completed,
-          },
-          uiObj
-        );
+        editTodo({ title: json.title, completed: json.completed }, uiObj);
         closeDialog(dialogEdit);
       } catch (error) {
-        console.log(`Ошибка ${error.status}`);
+        console.log(error);
       }
     };
+  },
+  changeStatusFunc: async function (todoObj, id, todoDescription) {
+    try {
+      const json = await editTodoApi(todoObj, id);
+      changeStatusTodo(todoDescription, todoObj.completed);
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 

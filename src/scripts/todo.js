@@ -11,29 +11,34 @@ function addTodo(todoObj, funcObj) {
   const checkboxCompleted = todoElement.querySelector(".todo__checkbox");
 
   const { id, title, completed } = todoObj;
-  const { removeFunc, editFunc } = funcObj;
+  const { removeFunc, editFunc, changeStatusFunc } = funcObj;
 
   todoDescription.textContent = title;
   checkboxCompleted.checked = completed;
   if (checkboxCompleted.checked) {
-    todoDescription.classList.add('todo__text_completed');
+    todoDescription.classList.add("todo__text_completed");
   }
 
   removeButton.addEventListener("click", (evt) => removeFunc(todoElement, id));
   editButton.addEventListener("click", (evt) =>
-    editFunc({
-      description: todoDescription,
-      isCompleted: checkboxCompleted,
-    }, id)
+    editFunc(
+      {
+        description: todoDescription,
+        isCompleted: checkboxCompleted,
+      },
+      id
+    )
   );
-  checkboxCompleted.addEventListener('click', (evt) => {
-    if (checkboxCompleted.checked) {
-      todoDescription.classList.add('todo__text_completed');
-    } else {
-      todoDescription.classList.remove('todo__text_completed');
-    }
-  })
-
+  checkboxCompleted.addEventListener("click", (evt) => {
+    changeStatusFunc(
+      {
+        title: todoDescription.textContent,
+        completed: checkboxCompleted.checked,
+      },
+      id,
+      todoDescription
+    );
+  });
   return todoElement;
 }
 
@@ -46,4 +51,12 @@ function editTodo(todoObj, uiObj) {
   uiObj.isCompleted.checked = todoObj.completed;
 }
 
-export { addTodo, removeTodo, editTodo };
+function changeStatusTodo(todoDescription, isCompleted) {
+  if (isCompleted) {
+    todoDescription.classList.add("todo__text_completed");
+  } else {
+    todoDescription.classList.remove("todo__text_completed");
+  }
+}
+
+export { addTodo, removeTodo, editTodo, changeStatusTodo };
