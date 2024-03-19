@@ -1,17 +1,20 @@
 .todo__text {
-  font-size: 20px;
   position: relative;
   display: inline-block;
+  font-size: 20px;
 }
 
 .todo__text::before {
-  content: '';
+  content: "";
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 45%;
-  inline-size: 0;
-  block-size: 10%;
   background-color: var(--text-annd-icons-hover-color, #ee4266);
   transition: inline-size 0.15s linear;
-  rotate: -3deg;
+  transition: scale 0.25s linear;
+  transform-origin: left center;
+  inset-inline-start: 0;
+  inset-block-start: 45%;
+  inline-size: 100%;
+  block-size: 10%;
+  rotate: -1.5deg;
+  scale: 0 1;
 }

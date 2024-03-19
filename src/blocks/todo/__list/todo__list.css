@@ -12,9 +12,7 @@
   inline-size: 30px;
 }
 
-
 .todo__list::-webkit-scrollbar-track {
-  /* background-color: #fff; */
   background: linear-gradient(
     to right,
     transparent,
@@ -33,4 +31,18 @@
 
 .todo__list::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-annd-icons-hover-color, #ee4266);
+}
+
+@supports (scrollbar-color: red blue) {
+  .todo__list * {
+    scrollbar-color: #fff
+      linear-gradient(
+        to right,
+        transparent,
+        transparent 40%,
+        rgba(255 255 255 / 0.5) 40%,
+        rgba(255 255 255 / 0.5) 60%,
+        transparent 60%
+      );
+  }
 }
