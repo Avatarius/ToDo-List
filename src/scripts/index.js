@@ -118,19 +118,6 @@ buttonNewTodo.addEventListener("click", () => {
   openDialog(dialogNew);
 });
 
-/* dialogNewObj.form.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  todoList.prepend(
-    addTodo(
-      {
-        title: dialogNewObj.form.description.value,
-        completed: false,
-      },
-      funcObj
-    )
-  );
-  closeDialog(dialogNew);
-}); */
 dialogNewObj.form.addEventListener("submit", handleAddCardSubmit);
 
 let handleTodoRemove = async function () {};

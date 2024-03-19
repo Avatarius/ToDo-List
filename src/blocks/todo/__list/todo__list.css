@@ -1,11 +1,11 @@
 .todo__list {
   display: flex;
   flex-direction: column;
-  inline-size: 100%;
-  gap: 30px;
-  overflow: auto;
   flex-basis: 550px;
+  gap: 30px;
   padding-inline-end: 20px;
+  overflow-y: scroll;
+  inline-size: 100%;
 }
 
 .todo__list::-webkit-scrollbar {
@@ -16,21 +16,34 @@
   background: linear-gradient(
     to right,
     transparent,
-    transparent 40%,
-    rgba(255 255 255 / 0.5) 40%,
-    rgba(255 255 255 / 0.5) 60%,
-    transparent 60%
+    transparent 45%,
+    rgba(255 255 255 / 0.15) 45%,
+    rgba(255 255 255 / 0.15) 55%,
+    transparent 55%
   );
 }
 
 .todo__list::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  block-size: 30px;
-  border-radius: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    transparent 45%,
+    rgba(255 255 255 / 1) 45%,
+    rgba(255 255 255 / 1) 55%,
+    transparent 55%
+  );
+  block-size: 70px;
 }
 
 .todo__list::-webkit-scrollbar-thumb:hover {
-  background-color: var(--text-annd-icons-hover-color, #ee4266);
+  background: linear-gradient(
+    to right,
+    transparent,
+    transparent 45%,
+    var(--text-annd-icons-hover-color, #ee4266) 45%,
+    var(--text-annd-icons-hover-color, #ee4266) 55%,
+    transparent 55%
+  );
 }
 
 @supports (scrollbar-color: red blue) {
