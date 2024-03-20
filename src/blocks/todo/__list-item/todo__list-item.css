@@ -7,10 +7,9 @@
   column-gap: 5px;
   border: none;
   padding: 20px;
-  /* overflow: hidden; */
   background-color: rgba(0 0 0 / 0.1);
   transition: background-color 0.25s linear;
-
+  inline-size: 100%;
 }
 
 .todo__list-item:hover {

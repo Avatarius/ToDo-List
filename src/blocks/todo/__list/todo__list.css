@@ -1,11 +1,10 @@
 .todo__list {
   display: flex;
   flex-direction: column;
-  flex-basis: 550px;
-  gap: 30px;
+  gap: 20px;
   padding-inline-end: 20px;
-  overflow-y: scroll;
-  inline-size: 100%;
+  overflow-y: auto;
+  /* inline-size: 100%; */
 }
 
 .todo__list::-webkit-scrollbar {
