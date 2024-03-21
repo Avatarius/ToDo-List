@@ -7,6 +7,7 @@
   --text-annd-icons-hover-color: #ee4266;
   --new-button-size: 80px;
   --search-button-size: 35px;
+  --todo-button-size: clamp(2.188rem, 1.964rem + 0.952vw, 2.5rem);
   --checkbox-size: 23px;
   --checkbox-inner-size: calc(var(--checkbox-size, 25px) * 0.75);
   --partial-border-size: 20px;

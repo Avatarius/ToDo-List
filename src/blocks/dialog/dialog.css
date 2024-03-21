@@ -11,7 +11,7 @@
   border: none;
   padding: 0;
   background-color: transparent;
-  min-inline-size: 400px;
+  min-inline-size: clamp(22.813rem, 21.25rem + 6.667vw, 25rem);
 }
 
 .dialog::backdrop {

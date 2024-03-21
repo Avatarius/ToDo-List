@@ -11,7 +11,7 @@
   padding: 50px 20px 20px 20px;
   box-shadow: 0 10px 10px rgba(0 0 0 / 0.4);
   background-color: var(--content-background-color, #7469b6);
-  inline-size: 820px;
+  inline-size: clamp(21.875rem, 0.893rem + 89.524vw, 51.25rem);
   block-size: 650px;
 }
 
@@ -28,10 +28,10 @@
   mask-image: url("/src/images/buttonMask.svg");
   mask-repeat: no-repeat;
   mask-position: top;
-  mask-size: 14%;
+  mask-size: 115px;
 }
 
 .content:has(.content__button-new:hover)::before {
-  mask-size: 17%;
+  mask-size: 135px;
 }
 

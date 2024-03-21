@@ -10,6 +10,8 @@ const searchInput = document.querySelector(".search__input");
 const searchResetButton = document.querySelector(".search__button_reset");
 const buttonNewTodo = document.querySelector(".content__button-new");
 
+
+
 const dialogNew = document.querySelector(".dialog_new");
 const dialogNewObj = {
   dialog: dialogNew,
@@ -166,3 +168,5 @@ searchResetButton.addEventListener("click", () => {
   searchForm.reset();
   filterTodoList(searchForm.search.value);
 });
+
+

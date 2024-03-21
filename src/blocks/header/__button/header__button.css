@@ -1,11 +1,11 @@
 .header__button {
   border: 1px solid #fff;
   border-radius: 30px;
-  font-size: 20px;
-  min-inline-size: 240px;
+  font-size: clamp(0.688rem, 0.286rem + 1.714vw, 1.25rem);
+  min-inline-size: clamp(1.875rem, -7.5rem + 40vw, 15rem);
   translate: 0 250%;
   transition: translate 0.2s linear;
-  padding: 6px;
+  padding: clamp(0.375rem, -0.268rem + 1.143vw, 0rem);
 }
 
 .header__button:hover {

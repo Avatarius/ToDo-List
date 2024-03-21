@@ -1,7 +1,7 @@
 .todo__list-item {
   position: relative;
   display: grid;
-  grid-template-columns: min-content 1fr 40px 40px;
+  grid-template-columns: min-content 1fr var(--todo-button-size, 40px) var(--todo-button-size, 40px);
   grid-template-rows: 1fr;
   grid-template-areas: "todo__label todo__text todo__button_edit todo__button_remove";
   column-gap: 5px;
