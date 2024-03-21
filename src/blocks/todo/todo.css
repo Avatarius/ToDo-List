@@ -1,12 +1,11 @@
 @import url('./__list/todo__list.css');
 @import url('./__list-item/todo__list-item.css');
 @import url('./__list-item/_hidden/todo__list-item_hidden.css');
+@import url('./__label/todo__label.css');
+@import url('./__checkbox/todo__checkbox.css');
+@import url('./__checkbox/_custom/todo__checkbox_custom.css');
 @import url('./__text-container/todo__text-container.css');
-@import url('./___text/todo__text.css');
-@import url('./___text/_completed/todo__text_completed.css');
+@import url('./__text/todo__text.css');
 @import url('./__button/todo__button.css');
 @import url('./__button/_edit/todo__button_edit.css');
 @import url('./__button/_remove/todo__button_remove.css');
-@import url('./__label/todo__label.css');
-@import url('./__checkbox/todo__checkbox.css');
-@import url('.//__checkbox/_custom/todo__checkbox_custom.css');

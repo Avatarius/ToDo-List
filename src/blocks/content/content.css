@@ -1,9 +1,10 @@
-@import url("./__button/_new/content__button_new.css");
+@import url('./__button-new/content__button-new.css');
 
 .content {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-self: center;
   align-items: center;
   gap: 20px;
   border-radius: var(--content-border-radius, 7px);
@@ -12,7 +13,6 @@
   background-color: var(--content-background-color, #7469b6);
   inline-size: 820px;
   block-size: 650px;
-  justify-self: center;
 }
 
 .content::before {
@@ -31,6 +31,7 @@
   mask-size: 14%;
 }
 
-.content:has(.content__button_new:hover)::before {
+.content:has(.content__button-new:hover)::before {
   mask-size: 17%;
 }
+

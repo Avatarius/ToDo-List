@@ -1,14 +1,14 @@
 .search__form {
+  z-index: 2;
   display: grid;
   grid-template-columns: var(--search-button-size, 35px) 0fr var(
       --search-button-size,
       35px
     );
   align-items: center;
+  margin-block-start: 10px;
   transition: grid-template-columns 0.5s ease-in-out;
   inline-size: 100%;
-  z-index: 2;
-  margin-block-start: 10px;
 }
 
 .search__form_expanded {

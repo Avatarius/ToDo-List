@@ -1,16 +1,16 @@
 .dialog__span {
   position: absolute;
-  inset-inline-start: 1px;
-  inset-block-start: 1px;
+  border-inline: 1px solid transparent;
   padding: 10px;
   transition: translate 0.2s linear;
-  border-inline: 1px solid transparent;
+  inset-inline-start: 1px;
+  inset-block-start: 1px;
 }
 
 .dialog__input:valid ~ .dialog__span,
 .dialog__input:focus ~ .dialog__span {
-  translate: 7px -12px;
-  background-color: var(--dialog-background-color, #8e2de2);
-  padding: 0 5px;
   border-color: #fff;
+  padding: 0 5px;
+  background-color: var(--dialog-background-color, #8e2de2);
+  translate: 7px -12px;
 }

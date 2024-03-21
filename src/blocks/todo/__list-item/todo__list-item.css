@@ -15,3 +15,44 @@
 .todo__list-item:hover {
   background-color: rgba(0 0 0 / 0.2);
 }
+
+
+.todo__list-item::before,
+.todo__list-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: inline-size 0.5s ease-out, block-size 0.5s ease-out,
+    border-color 0.5s ease-in-out, inset-inline-start 0.5s linear;
+  inline-size: var(--partial-border-size, 20px);
+  block-size: var(--partial-border-size, 20px);
+  pointer-events: none;
+}
+
+.todo__list-item::before {
+  border-top-left-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-inline-start: 2px solid var(--text-and-icons-color, #fff);
+  border-block-start: 2px solid var(--text-and-icons-color, #fff);
+}
+
+.todo__list-item::after {
+  margin-inline-start: auto;
+  margin-block-start: auto;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-inline-end: 2px solid var(--text-and-icons-color, #fff);
+  border-block-end: 2px solid var(--text-and-icons-color, #fff);
+  inset-block-start: calc(100% - 20px);
+}
+
+.todo__list-item:hover::before,
+.todo__list-item:hover::after {
+  border-color: var(--text-annd-icons-hover-color, #67c6e3);
+  inline-size: 100%;
+  block-size: 100%;
+}

@@ -1,5 +1,5 @@
 .todo__label {
+  display: flex;
   grid-area: todo__label;
   align-items: center;
-  display: flex;
 }

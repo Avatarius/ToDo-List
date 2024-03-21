@@ -1,4 +1,4 @@
-.content__button_new {
+.content__button-new {
   position: absolute;
   border: none;
   border-radius: 100%;
@@ -14,7 +14,7 @@
   inset-block-start: calc(var(--new-button-size, 100px) / -2);
 }
 
-.content__button_new:hover {
+.content__button-new:hover {
   background-color: var(--text-annd-icons-hover-color, #67c6e3);
   scale: 1.2;
 }

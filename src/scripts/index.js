@@ -8,7 +8,7 @@ const todoList = document.querySelector(".todo__list");
 const searchForm = document.querySelector(".search__form");
 const searchInput = document.querySelector(".search__input");
 const searchResetButton = document.querySelector(".search__button_reset");
-const buttonNewTodo = document.querySelector(".content__button_new");
+const buttonNewTodo = document.querySelector(".content__button-new");
 
 const dialogNew = document.querySelector(".dialog_new");
 const dialogNewObj = {

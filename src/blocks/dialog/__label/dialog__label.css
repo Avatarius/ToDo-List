@@ -1,7 +1,7 @@
 .dialog__label {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin-block: 20px;
-  position: relative;
 }
