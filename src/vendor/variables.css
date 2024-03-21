@@ -4,12 +4,13 @@
   --dialog-background-color: #8e2de2;
   --content-border-radius: 7px;
   --text-and-icons-color: #fff;
-  /* --text-annd-icons-hover-color: #67C6E3; */
   --text-annd-icons-hover-color: #ee4266;
-  /* --text-annd-icons-hover-color: #FFD23F; */
   --new-button-size: 80px;
   --search-button-size: 35px;
   --checkbox-size: 23px;
   --checkbox-inner-size: calc(var(--checkbox-size, 25px) * 0.75);
   --partial-border-size: 20px;
+  --burger-menu-bar-height: 4px;
+  --burger-menu-gap: 7px;
+  --burger-menu-height: calc(var(--burger-menu-bar-height, 4px) * 3 + var(--burger-menu-gap, 7px) * 2);
 }

@@ -1,0 +1,39 @@
+.header__button {
+  appearance: none;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 30px;
+  font-size: 20px;
+  min-inline-size: 240px;
+  cursor: pointer;
+  translate: 0 250%;
+  transition: translate 0.2s linear;
+  padding: 6px;
+}
+
+.header__button-1 {
+  transition-delay: 0.15s;
+}
+
+.header__button-2 {
+  transition-delay: 0.25s;
+}
+
+.header__button-3 {
+  transition-delay: 0.35s;
+}
+
+.header__button-4 {
+  transition-delay: 0.45s;
+}
+
+
+.header__button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
+.header__label:has(.header__checkbox:checked) + .header__button-container > .header__button {
+  translate: 0;
+}

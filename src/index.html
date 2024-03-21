@@ -6,7 +6,18 @@
     <title>ToDo List</title>
   </head>
   <body class="page">
-    <h1 class="page__title">todo</h1>
+    <header class="header">
+      <h1 class="header__title">todo</h1>
+      <label class="header__label">
+        <input type="checkbox" class="header__checkbox">
+      </label>
+      <div class="header__button-container">
+        <button class="header__button header__button-1">Сортировать по имени</button>
+        <button class="header__button header__button-2">Сортировать по статусу</button>
+        <button class="header__button header__button-3">Очистить завершённые</button>
+        <button class="header__button header__button-4">Очистить</button>
+      </div>
+    </header>
     <main class="content">
       <form class="search__form">
         <button type="button" class="search__button search__button_search">

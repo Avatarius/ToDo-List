@@ -1,0 +1,23 @@
+@import url('./__title/header__title.css');
+@import url('./__label/header__label.css');
+@import url('./__checkbox/header__checkbox.css');
+@import url('./__button-container/header__button-container.css');
+@import url('./__button/header__button.css');
+
+.header {
+  background-color: rgba(0 0 0 / 0.4);
+  inline-size: 100%;
+  position: relative;
+  block-size: 50%;
+  transition: block-size 0.2s linear;
+  padding-block: 10px;
+  overflow: hidden;
+}
+
+.header:has(.header__checkbox:checked) {
+  block-size: 100%;
+}
+
+.header:not(:has(.header__checkbox:checked)) {
+  transition-delay: 0.6s;
+}

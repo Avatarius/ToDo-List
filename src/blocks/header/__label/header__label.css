@@ -1,0 +1,27 @@
+.header__label {
+  --x-width: calc(var(--burger-menu-height) * 1.41421356237);
+  position: absolute;
+  inset-inline-end: 10px;
+  inset-block-end: 30px;
+  inline-size: 30px;
+  block-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--burger-menu-gap, 7px);
+  cursor: pointer;
+}
+
+.header__checkbox,
+.header__label::before,
+.header__label::after {
+  content: '';
+  inline-size: 100%;
+  block-size: var(--burger-menu-bar-height, 4px);
+  background-color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  transform-origin: left center;
+  transition: opacity 0.2s linear, inline-size 0.2s linear, rotate 0.2s linear, translate 0.2s linear;
+}
