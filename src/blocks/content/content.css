@@ -11,7 +11,7 @@
   box-shadow: 0 10px 10px rgba(0 0 0 / 0.4);
   background-color: var(--content-background-color, #7469b6);
   inline-size: 820px;
-  block-size: 750px;
+  block-size: 650px;
   justify-self: center;
 }
 
